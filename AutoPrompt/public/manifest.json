@@ -1,0 +1,20 @@
+{
+    "manifest_version": 3,
+    "name": "ChatGPT Prompt Generator",
+    "version": "1.0",
+    "description": "Générateur de prompts optimisés pour ChatGPT",
+    "permissions": ["storage"],
+    "action": {
+        "default_popup": "index.html",
+        "default_icon": "icon.png"
+    },
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://chat.openai.com/*"],
+            "js": ["content.js"]
+        }
+    ]
+}
